@@ -22,7 +22,7 @@ export const fetchNewsList = () => {
   return async (dispatch) => {
     dispatch(fetchNewsRequest());
     try {
-      const response = await fetchData;
+      const response = await fetchData();
       const newsList = response;
       dispatch(fetchNewsSuccess(newsList));
     } catch (error) {

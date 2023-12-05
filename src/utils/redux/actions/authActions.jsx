@@ -33,6 +33,7 @@ export const signIn = (userData) => async (dispatch) => {
 };
 
 export const signOut = () => (dispatch) => {
+  console.log("test");
   localStorage.removeItem("user");
   dispatch({
     type: SIGN_OUT,

@@ -1,7 +1,12 @@
 import React from "react";
+import SignupCard from "../components/SignupCard/SignupCard";
 
 function Signup() {
-  return <div>signup</div>;
+  return (
+    <div>
+      <SignupCard />
+    </div>
+  );
 }
 
 export default Signup;
