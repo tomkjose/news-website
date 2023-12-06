@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Signin, Signup, Favourite, Fof, Post } from "../../pages/Index";
 import { useEffect } from "react";
 import { fetchData } from "../../apis";
