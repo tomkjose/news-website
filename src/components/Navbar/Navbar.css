@@ -73,3 +73,10 @@ li {
     font-size: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    font-size: 10px;
+  }
+}
