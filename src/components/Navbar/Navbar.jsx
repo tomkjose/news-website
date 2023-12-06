@@ -28,12 +28,11 @@ function Navbar() {
         {user ? (
           <li className="nav__list__item">
             <Link to="/favourites" className="nav__link">
-              {" "}
               <i
                 className="fa-solid fa-heart "
                 style={{ color: "#000000" }}
               ></i>
-              {""} <span className="nav__link">Favourites</span>
+              <span className="nav__link"> Favourites</span>
             </Link>
           </li>
         ) : (

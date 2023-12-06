@@ -33,7 +33,7 @@ function Favourite() {
               className="grid__image"
             />
             <div className="fav_details">
-              <h1>{favorite.title}</h1>
+              <h2>{favorite.title}</h2>
               <p>{favorite.description}</p>
               <div className="button__container">
                 <i

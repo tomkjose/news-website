@@ -61,7 +61,7 @@ function HomeCard({
                   </button>
                   {user && favoriteIndex !== -1 ? (
                     <i
-                      className="fa-solid fa-heart fa-2xl"
+                      className="fa-solid fa-heart fa-2xl fav__btn"
                       style={{ color: "#ff8c4a" }}
                       onClick={() =>
                         handleRemoveFavorite(
@@ -73,7 +73,7 @@ function HomeCard({
                   ) : user ? (
                     <i
                       onClick={() => handleFavorite(user.localId, news)}
-                      className="fa-solid fa-heart fa-2xl"
+                      className="fa-solid fa-heart fa-2xl fav__btn"
                       style={{ color: "#000000" }}
                     ></i>
                   ) : (
@@ -105,7 +105,7 @@ function HomeCard({
                     </button>
                     {user && favoriteIndex !== -1 ? (
                       <i
-                        className="fa-solid fa-heart fa-2xl"
+                        className="fa-solid fa-heart fa-2xl fav__btn"
                         style={{ color: "#ff8c4a" }}
                         onClick={() =>
                           handleRemoveFavorite(
@@ -117,7 +117,7 @@ function HomeCard({
                     ) : user ? (
                       <i
                         onClick={() => handleFavorite(user.localId, news)}
-                        className="fa-solid fa-heart fa-2xl"
+                        className="fa-solid fa-heart fa-2xl fav__btn"
                         style={{ color: "#000000" }}
                       ></i>
                     ) : (
