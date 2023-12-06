@@ -18,14 +18,15 @@ function HomeCard({
 
   return (
     <div className="home__card">
+      {user ? (
+        <div className="user__card">
+          Welcome back <span>{user.email}</span>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="view__container">
-        {user ? (
-          <div className="user__card">
-            Welcome back <span>{user.email}</span>
-          </div>
-        ) : (
-          ""
-        )}
+        <div className="view__title">Latest Updates</div>
         <div>
           <button className="btn" onClick={handleGridView}>
             {isGrid ? (
@@ -67,12 +68,14 @@ function HomeCard({
                           )
                         }
                       ></i>
-                    ) : (
+                    ) : user ? (
                       <i
                         onClick={() => handleFavorite(user.localId, news)}
                         className="fa-solid fa-heart fa-2xl"
                         style={{ color: "#000000" }}
                       ></i>
+                    ) : (
+                      " "
                     )}
                   </div>
                 </div>
@@ -110,12 +113,14 @@ function HomeCard({
                             )
                           }
                         ></i>
-                      ) : (
+                      ) : user ? (
                         <i
                           onClick={() => handleFavorite(user.localId, news)}
                           className="fa-solid fa-heart fa-2xl"
                           style={{ color: "#000000" }}
                         ></i>
+                      ) : (
+                        ""
                       )}
                     </div>
                   </div>
