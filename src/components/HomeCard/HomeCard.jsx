@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./HomeCard.css";
 import "../../styles/index.css";
-
+import Loading from "../Loading/Loading";
 function HomeCard({
   user,
   newsList,
@@ -15,7 +15,9 @@ function HomeCard({
   const handleGridView = () => {
     setIsGrid(!isGrid);
   };
-
+  if (newsList.length === 0) {
+    return <Loading />;
+  }
   return (
     <div className="home__card">
       {user ? (

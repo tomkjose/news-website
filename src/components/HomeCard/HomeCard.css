@@ -77,14 +77,14 @@
 
 @media (max-width: 600px) {
   .home__card {
-    width: 90%;
+    width: 95%;
     font-size: 8px;
   }
 }
 
 @media (max-width: 1200px) {
   .home__card {
-    width: 90%;
+    width: 85%;
     font-size: 14px;
   }
 }
