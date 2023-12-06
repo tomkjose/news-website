@@ -27,7 +27,7 @@ function Home() {
     if (user) {
       dispatch(fetchFavorites(user.localId));
     }
-  }, [dispatch, favorites]);
+  }, [dispatch, favorites, user]);
 
   const handleFavorite = (localId, news) => {
     dispatch(addFavorite(localId, news));

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import SigninCard from "../components/SigninCard/SigninCard";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ function Signin() {
     if (user) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, navigate]);
   return <SigninCard />;
 }
 

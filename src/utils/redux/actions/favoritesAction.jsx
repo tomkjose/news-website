@@ -11,7 +11,7 @@ export const FETCH_FAVORITES_FAILURE = "FETCH_FAVORITES_FAILURE";
 
 export const addFavorite = (userId, index) => async (dispatch) => {
   try {
-    console.log("index", index);
+    // console.log("index", index);
     await addToFavoritesToDB(userId, index);
     dispatch({
       type: ADD_FAVORITE,

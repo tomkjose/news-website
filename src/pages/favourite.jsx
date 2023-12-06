@@ -4,7 +4,7 @@ import {
   removeFavorite,
 } from "../utils/redux/actions/favoritesAction";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/favourite.css";
 function Favourite() {
   const user = useSelector((state) => state.auth.user);
@@ -12,8 +12,6 @@ function Favourite() {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
   const handleRemoveFavorite = (userId, postId) => {
-    console.log("userId", userId);
-    console.log("postId", postId);
     dispatch(removeFavorite(userId, postId));
   };
   useEffect(() => {
@@ -22,7 +20,7 @@ function Favourite() {
     } else {
       navigate("/signin");
     }
-  }, [favorites, user]);
+  }, [favorites, user, dispatch, navigate]);
 
   return (
     <div className="grid__container fav__posts">

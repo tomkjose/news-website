@@ -7,7 +7,7 @@ function Fof() {
   return (
     <div className="fof">
       <div className="fof__card">
-        <img src={FofImage} alt="404-image" />
+        <img src={FofImage} alt="404" />
         <Link to="/">
           {" "}
           <button className="btn">Home</button>

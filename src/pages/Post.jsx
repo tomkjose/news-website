@@ -17,7 +17,7 @@ function Post() {
       const newsPost = newsList[id.id];
       setSelectedNews(newsPost);
     }
-  }, [selectedNews, newsList]);
+  }, [selectedNews, newsList, id.id]);
 
   return (
     <div className="post__card">

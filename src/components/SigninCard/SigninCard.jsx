@@ -22,7 +22,7 @@ function SigninCard() {
   const handleSignIn = (e) => {
     setLoading(true);
     e.preventDefault();
-    console.log("Sign Up Submitted");
+
     try {
       dispatch(signIn(userData));
       navigate("/");
