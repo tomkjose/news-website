@@ -40,6 +40,12 @@ function Post() {
           <div className="postcard__content">
             <p>{selectedNews.content}</p>
           </div>
+          <div className="postcard__content">
+            <p>{selectedNews.content}</p>
+          </div>
+          <div className="postcard__content">
+            <p>{selectedNews.content}</p>
+          </div>
           <div className="postcard__author">
             <img
               src={userImage}
@@ -48,12 +54,7 @@ function Post() {
             />
             <div className="author__details">
               <p className="author__name">{selectedNews.author}</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus.
-              </p>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             </div>
           </div>
         </div>

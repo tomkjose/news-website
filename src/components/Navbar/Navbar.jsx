@@ -14,7 +14,8 @@ function Navbar() {
     <div className="navbar">
       <div className="nav__logo">
         {" "}
-        <i className="fa-solid fa-newspaper fa-lg "></i> News
+        <i className="fa-solid fa-newspaper fa-xl "></i>{" "}
+        <span className="nav__title">News</span>
       </div>
       <div className="nav__list">
         <li className="nav__list__item">

@@ -1,0 +1,40 @@
+.fav__card {
+  width: 100%;
+}
+
+.fav__posts {
+  width: 80%;
+  display: flex;
+  margin: 1rem auto;
+}
+
+.fav__image {
+  width: 30%;
+  min-width: 200px;
+  min-height: 200px;
+  border-radius: 0.8rem;
+}
+
+.fav_details {
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .fav__posts {
+    width: 90%;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fav__posts {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .fav__posts {
+    width: 90%;
+    font-size: 10px;
+  }
+}

@@ -66,6 +66,7 @@
 
 .author__image {
   width: 5rem;
+  height: 5rem;
   border-radius: 100%;
 }
 
@@ -84,11 +85,21 @@
   }
 
   .postcard__description {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .postcard__description {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 
   .image {
     border-radius: 0;
+  }
+  .postcard__author {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 4rem;
   }
 }
