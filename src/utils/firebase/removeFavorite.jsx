@@ -1,7 +1,7 @@
 import { db } from "./firebaseConfig";
 import { collection, doc, deleteDoc } from "firebase/firestore";
 
-export const removeFromFavorites = async (userId, postId) => {
+export const removeFromFavoritesFromDB = async (userId, postId) => {
   try {
     const favoritesCollection = collection(db, `users/${userId}/favorites`);
     const postDoc = doc(favoritesCollection, postId);

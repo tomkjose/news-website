@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import "../../styles/index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../utils/redux/actions/authActions";
 function Navbar() {
@@ -10,31 +11,52 @@ function Navbar() {
     dispatch(signOut());
   };
   return (
-    <div>
-      <div>Logo</div>
+    <div className="navbar">
+      <div className="nav__logo">
+        {" "}
+        <i className="fa-solid fa-newspaper fa-lg "></i> News
+      </div>
       <div className="nav__list">
-        <li>
-          <Link to="/">Home</Link>
+        <li className="nav__list__item">
+          <Link to="/" className="nav__link">
+            {" "}
+            <i className="fa-solid fa-house"></i>
+            {""} <span className="nav__link">Home</span>
+          </Link>
         </li>
         {user ? (
-          <li>
-            <Link to="/favourites">favourites</Link>
+          <li className="nav__list__item">
+            <Link to="/favourites" className="nav__link">
+              {" "}
+              <i
+                className="fa-solid fa-heart "
+                style={{ color: "#000000" }}
+              ></i>
+              {""} <span className="nav__link">Favourites</span>
+            </Link>
           </li>
         ) : (
           ""
         )}
         {!user ? (
           <div className="nav__list">
-            <li>
-              <Link to="/signin">Sign In</Link>
+            <li className="nav__list__item">
+              <Link to="/signin">
+                <button className="btn">Sign In</button>
+              </Link>
             </li>
-            <li>
-              <Link to="/signup">Sign Up</Link>
+            <li className="nav__list__item">
+              <Link to="/signup">
+                <button className="btn">Sign Up</button>
+              </Link>
             </li>
           </div>
         ) : (
-          <li>
-            <button onClick={handleLogOut}>Logout</button>
+          <li className="nav__list__item" onClick={handleLogOut}>
+            <button className="btn">
+              {" "}
+              <i className="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
           </li>
         )}
       </div>

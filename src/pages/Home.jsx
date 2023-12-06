@@ -1,52 +1,51 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNewsList } from "../utils/redux/actions/newsActions";
-import { addToFavorites } from "../utils/firebase/addFavorite";
-import { fetchFavorites } from "../utils/redux/actions/favoritesAction";
+import {
+  addFavorite,
+  fetchFavorites,
+  removeFavorite,
+} from "../utils/redux/actions/favoritesAction";
+import { useNavigate } from "react-router-dom";
+import HomeCard from "../components/HomeCard/HomeCard";
 
 function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchNewsList());
   }, [dispatch]);
-
+  const navigate = useNavigate();
   const newsList = useSelector((state) => state.news.newsList);
   const user = useSelector((state) => state.auth.user);
   const favorites = useSelector((state) => state.favorites.favorites);
+
+  const handleView = (id) => {
+    navigate(`/post/${id}`);
+  };
+
   useEffect(() => {
     if (user) {
       dispatch(fetchFavorites(user.localId));
     }
-  }, []);
+  }, [dispatch, favorites]);
 
   const handleFavorite = (localId, news) => {
-    addToFavorites(localId, news);
-    console.log("news", news);
-    console.log("localId", localId);
+    dispatch(addFavorite(localId, news));
   };
 
-  console.log("favorites", favorites);
+  const handleRemoveFavorite = (localId, newsId) => {
+    dispatch(removeFavorite(localId, newsId));
+  };
+
   return (
-    <div>
-      <div>
-        {newsList &&
-          newsList.map((news, index) => {
-            return (
-              <div key={index}>
-                <h1>{news.title}</h1>
-                <p>{news.description}</p>
-                {user ? (
-                  <button onClick={() => handleFavorite(user.localId, news)}>
-                    Love
-                  </button>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-      </div>
-    </div>
+    <HomeCard
+      newsList={newsList}
+      favorites={favorites}
+      user={user}
+      handleFavorite={handleFavorite}
+      handleRemoveFavorite={handleRemoveFavorite}
+      handleView={handleView}
+    />
   );
 }
 

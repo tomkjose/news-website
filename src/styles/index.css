@@ -7,3 +7,17 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.btn {
+  border-radius: 0.2rem;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #ff8c4a;
+}
