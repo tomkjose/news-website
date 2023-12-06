@@ -75,6 +75,21 @@
   border-radius: 0.8rem;
 }
 
+.fav__btn {
+  cursor: pointer;
+}
+
+.home__pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+.btn__pagination {
+  margin: 0 0.4rem;
+}
+
 @media (max-width: 600px) {
   .home__card {
     width: 95%;

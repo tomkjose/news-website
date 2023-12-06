@@ -39,7 +39,7 @@ function Favourite() {
               <p>{favorite.description}</p>
               <div className="button__container">
                 <i
-                  className="fa-solid fa-heart fa-2xl"
+                  className="fa-solid fa-heart fa-2xl fav__btn"
                   style={{ color: "#ff8c4a" }}
                   onClick={() =>
                     handleRemoveFavorite(user.localId, favorite.id)
