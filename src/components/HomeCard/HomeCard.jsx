@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./HomeCard.css";
 import "../../styles/index.css";
 import Loading from "../Loading/Loading";
@@ -12,23 +12,8 @@ function HomeCard({
   favorites,
 }) {
   const [isGrid, setIsGrid] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [newsPerPage] = useState(10);
-
-  const indexOfLastNews = currentPage * newsPerPage;
-  const indexOfFirstNews = indexOfLastNews - newsPerPage;
-  const paginatedNewsList = newsList.slice(indexOfFirstNews, indexOfLastNews);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [newsList]);
-
   const handleGridView = () => {
     setIsGrid(!isGrid);
-  };
-
-  const handlePagination = (pageNumber) => {
-    setCurrentPage(pageNumber);
   };
 
   if (newsList.length === 0) {
@@ -58,7 +43,7 @@ function HomeCard({
 
       {isGrid ? (
         <div className="grid__container">
-          {paginatedNewsList.map((news, index) => {
+          {newsList.map((news, index) => {
             const favoriteIndex = favorites.findIndex(
               (fav) => fav.url === news.url
             );
@@ -101,7 +86,7 @@ function HomeCard({
         </div>
       ) : (
         <div className="list__container">
-          {paginatedNewsList.map((news, index) => {
+          {newsList.map((news, index) => {
             const favoriteIndex = favorites.findIndex(
               (fav) => fav.url === news.url
             );
@@ -145,21 +130,6 @@ function HomeCard({
           })}
         </div>
       )}
-
-      <div className="home__pagination">
-        {Array.from(
-          { length: Math.ceil(newsList.length / newsPerPage) },
-          (_, i) => (
-            <button
-              key={i + 1}
-              onClick={() => handlePagination(i + 1)}
-              className="btn btn__pagination"
-            >
-              {i + 1}
-            </button>
-          )
-        )}
-      </div>
     </div>
   );
 }
