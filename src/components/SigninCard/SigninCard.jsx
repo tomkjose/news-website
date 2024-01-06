@@ -42,7 +42,7 @@ function SigninCard() {
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail"
-            defaultValue={"jacob@gmail.com"}
+            defaultValue={"jason@gmail.com"}
             required
             className="signin__input"
           />
