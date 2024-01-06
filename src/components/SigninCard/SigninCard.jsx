@@ -42,7 +42,6 @@ function SigninCard() {
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail"
-            defaultValue={"jason@gmail.com"}
             required
             className="signin__input"
           />
@@ -51,7 +50,6 @@ function SigninCard() {
           <input
             type={isHidden ? "password" : "text"}
             onChange={(e) => setPassword(e.target.value)}
-            defaultValue={"qwerty12"}
             placeholder="Password"
             className="signin__input"
             required

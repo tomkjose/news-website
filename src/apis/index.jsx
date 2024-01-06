@@ -12,6 +12,7 @@ export const signUpUser = async (userData) => {
 };
 
 export const signInUser = async (userData) => {
+  console.log("userData", userData);
   const response = await axios.post(SIGN_IN_API, userData);
   return response;
 };
